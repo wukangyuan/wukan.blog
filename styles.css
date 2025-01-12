@@ -15,6 +15,8 @@ p {
 }  
 
 .container {  
+    border: 1px solid #ddd; /* 为容器添加边框 */  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */  
     width: 80%;  
     margin: auto;  
     overflow: hidden;  
@@ -37,4 +39,16 @@ nav ul li a {
     text-decoration: none;  
     color: #333;  
     font-weight: bold;  
+}
+
+h1 {  
+    color: #4A4A4A; /* 改变标题颜色 */  
+}  
+nav ul li a {  
+    color: #007BFF; /* 改变链接颜色 */  
+}
+@media (max-width: 600px) {  
+    .container {  
+        width: 100%; /* 手机屏幕时宽度100% */  
+    }  
 }
