@@ -50,7 +50,8 @@
       border-radius: 5px;  
       padding: 10px;  
       margin: 10px;  
-      width: 300px; /* 博文框宽度 */  
+      width: 33%; /* 博文框宽度为屏幕的三分之一 */  
+      box-sizing: border-box; /* 包括内边距和边框 */  
     }  
     .blog-title {  
       font-weight: bold; /* 博文标题加粗 */  
@@ -80,15 +81,19 @@
   <div class="profile">  
     <div class="avatar"></div>  
     <div class="bio">  
-      <p>这是个人简介，简要介绍自己。</p>  
+      <p>这是个人简介</p>  
     </div>  
   </div>  
 
   <div class="divider"></div>  
 
   <div class="blog-box">  
-    <p class="blog-title">博文内容 1</p>  
-    <p>敬请期待...</p>  
+    <p class="blog-title">欢迎来到我的博客!</p>  
+    <div class="container">  
+      <h1>欢迎来到我的博客!</h1>  
+      <li><a href="2025-1-13 blog1.html">2025-1-13 博文1</a></li>  
+      <!-- <p>这是我第一篇博客内容。</p>  -->  
+    </div>  
   </div>  
 
   <div class="blog-box">  
