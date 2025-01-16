@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>博客</title>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      text-align: center;  
+      padding: 20px;  
+    }  
+    .time-display {  
+      font-size: 24px;  
+      margin-bottom: 20px;  
+    }  
+    .bar-chart {  
+      display: flex;  
+      justify-content: space-between;  
+      margin-bottom: 20px;  
+    }  
+    .bar-chart div {  
+      width: 100px;  
+      height: 20px;  
+      background-color: #ccc;  
+      margin-right: 10px;  
+      transition: height 0.5s ease, background-color 0.5s ease;  
+    }  
+    .home-link {  
+      font-size: 18px;  
+      color: #007BFF;  
+      text-decoration: none;  
+    }  
+    .home-link:hover {  
+      text-decoration: underline;  
+    }  
+    @media (max-width: 600px) {  
+      .bar-chart div {  
+        width: 50px;  
+      }  
+      .time-display {  
+        font-size: 20px;  
+      }  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="time-display">12:00</div>  
+  <div class="bar-chart">  
+    <div></div>  
+    <div></div>  
+    <div></div>  
+  </div>  
+  <a class="home-link" href="index.html">首页</a>  
+
+  <script>  
+    // 动态更新时间  
+    function updateTime() {  
+      const timeDisplay = document.querySelector('.time-display');  
+      const now = new Date();  
+      const hours = String(now.getHours()).padStart(2, '0');  
+      const minutes = String(now.getMinutes()).padStart(2, '0');  
+      timeDisplay.textContent = `${hours}:${minutes}`;  
+    }  
+    setInterval(updateTime, 1000);  
+    updateTime();  
+
+    // 动态调整条形图  
+    const bars = document.querySelectorAll('.bar-chart div');  
+    function updateBarChart() {  
+      const newData = Array.from({ length: bars.length }, () => Math.floor(Math.random() * 100)); // 生成随机数据  
+      bars.forEach((bar, index) => {  
+        const height = (newData[index] / 100) * 100 + 'px'; // 计算新的高度（这里假设最大高度为100px，可以根据需要调整）  
+        const hue = newData[index] % 360; // 计算颜色（HUE值）  
+        bar.style.height = height; // 设置高度  
+        bar.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // 设置背景颜色（使用HSL颜色模型）  
+      });  
+    }  
+    setInterval(updateBarChart, 2000); // 每2秒更新一次条形图数据（可以根据需要调整时间间隔）  
+    updateBarChart(); // 立即执行一次以显示初始数据  
+  </script>  
+</body>  
+</html>
