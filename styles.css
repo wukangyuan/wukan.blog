@@ -1,10 +1,16 @@
-body {  
-    font-family: Arial, sans-serif;  
-    line-height: 1.6;  
-    margin: 0;  
-    padding: 0;  
-    background-color: #f4f4f4;  
-}  
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(225, 238, 255, 0.9),
+    rgba(205, 235, 255, 0.8)
+  );
+  -webkit-backdrop-filter: blur(2px); /* 兼容 Safari/Chrome */
+  backdrop-filter: blur(2px);
+}
 
 h1 {  
     color: #333;  
