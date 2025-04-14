@@ -8,79 +8,61 @@ body {
     rgba(225, 238, 255, 0.9),
     rgba(205, 235, 255, 0.8)
   );
-  -webkit-backdrop-filter: blur(2px); /* 兼容 Safari/Chrome */
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 
 h1 {  
-    color: #333;  
-    text-align: center; /* 标题居中 */ 
+  color: #4A4A4A; /* 只保留最终需要的颜色 */
+  text-align: center;
 }  
 
 p {  
-    margin: 15px 0;  
+  margin: 15px 0;  
 }  
 
 .container {  
-    border: 1px solid #ddd; /* 为容器添加边框 */  
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */  
-    width: 80%;  
-    max-width: 800px; /* 最大宽度限制，适应大屏 */  
-    margin: auto;  
-    overflow: hidden;  
-    padding: 20px;  
-    background: #fff;  
-    border-radius: 5px;  
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  width: 80%;  
+  max-width: 800px;  
+  margin: auto;  
+  overflow: hidden;  
+  padding: 20px;  
+  background: #fff;  
+  border-radius: 5px;  
 }
+
 nav ul {  
-    list-style: none;  
-    padding: 0;  
-    text-align: center; /* 导航居中 */  
+  list-style: none;  
+  padding: 0;  
+  text-align: center;  
 }  
 
 nav ul li {  
-    display: inline;  
-    margin-right: 30px;  
+  display: inline;  
+  margin-right: 30px;  
 }  
-/* 导航链接样式 */  
-nav ul li a {   
-    text-decoration: none;  /* 去掉下划线 */  
-    color: #007BFF;        /* 链接颜色 */  
-    padding: 5px 10px;     /* 添加内边距 */  
-    border: 1px solid #007BFF; /* 添加边框 */  
-    border-radius: 5px;    /* 圆角效果 */  
-    transition: background 0.3s; /* 背景变换 */  
+
+/* 合并导航链接样式 */
+nav ul li a { 
+  text-decoration: none;  
+  color: #007BFF;  
+  padding: 5px 10px;  
+  border: 1px solid #007BFF;  
+  border-radius: 5px;  
+  transition: background 0.3s;  
+  font-weight: bold; /* 合并 font-weight */
 }  
 
 nav ul li a:hover {   
-    background: #007BFF;   /* 悬停时改变背景 */  
-    color: white;          /* 悬停时改变字体颜色 */   
+  background: #007BFF;  
+  color: white;  
 }  
 
-/* 其他样式定义 */  
-
-nav ul li a {  
-    text-decoration: none;  
-    color: #333;  
-    font-weight: bold;  
-}
-
-h1 {  
-    color: #4A4A4A; /* 改变标题颜色 */  
-}  
-nav ul li a {  
-    color: #007BFF; /* 改变链接颜色 */  
-}
+/* 合并媒体查询 */
 @media (max-width: 600px) {  
-    .container {  
-        width: 100%; /* 手机屏幕时宽度100% */  
-    }  
+  .container {  
+    width: 95%;  
+  }  
 }
-/* 媒体查询，使容器在小屏幕上更友好 */  
-@media (max-width: 600px) {  
-    .container {  
-        width: 95%; /* 减少宽度 */  
-    }  
-}  
-
