@@ -1,0 +1,28 @@
+jobs:
+  build:
+    steps:
+      # ... 其他步骤 ...
+      - name: Cache Restore
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: .hugo_cache
+          key: ${{ runner.os }}-hugo-${{ hashFiles('hugo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
+
+      - name: Build with Hugo
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --cacheDir "./.hugo_cache"
+
+      - name: Cache Save
+        id: cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: .hugo_cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+

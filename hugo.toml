@@ -1,0 +1,13 @@
+baseURL = 'https://github.com/wukangyuan/wukan.blog.git'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'PaperMod'
+
+[caches]
+  cacheDir = ".hugo_cache"  # 项目根目录下生成隐藏目录
+
+  [caches.images]
+    dir = ":cacheDir/images"  # 最终路径：.hugo_cache/images
+
+  [caches.getjson]
+    dir = ":cacheDir/getjson"
