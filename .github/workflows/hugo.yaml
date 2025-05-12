@@ -1,7 +1,19 @@
+name: Hugo Build and Cache
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
-      # ... 其他步骤 ...
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Cache Restore
         id: cache-restore
         uses: actions/cache/restore@v4
@@ -21,8 +33,8 @@ jobs:
 
       - name: Cache Save
         id: cache-save
+        if: success()
         uses: actions/cache/save@v4
         with:
           path: .hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-
